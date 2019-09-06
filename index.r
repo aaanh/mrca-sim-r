@@ -58,5 +58,57 @@ desiredoutcomes <- sumn()
 estprob <- c(desiredoutcomes/10000)
 estprob
 
+# (b) Lottery #####
+
+play_lotto <- function() {
+  n <- 0
+  ticket <- c(6,9,4,2)
+  draw <- c(0,0,0,0)
+  while (!all(ticket==draw)) {
+    n <- n+1
+    draw <- sample(1:49, 4, replace=FALSE)
+    print(draw)
+  }
+  return(n)
+}
+
+numTix <- play_lotto()
+print("*** It took: ", numTix, "***")
+
+##### Exercise 2: Functions
+# a) Sum of integers
+
+# Prompt user for input
+
+calc_sum <- function() {
+  sum <- 0
+  i <- 0
+  n <- readline(prompt="Enter n: ")
+  n <- as.integer(n)
+    while (i <= n) {
+    sum <- sum + i
+    i <- i + 1
+  }
+  return(sum)
+}
+
+calc_sum()
+
+# b) Product of integers
+
+calc_sumofsquare <- function() {
+  sum1 <- 0
+  i <- 0
+  m <- readline(prompt="Enter m: ")
+  m <- as.integer(m)
+  while(i <= m){
+    sum1 <- sum1 + i*i
+    i <- i + 1
+  }
+  return(sum1)
+}
+
+calc_sumofsquare()
+
 # Clear screen
 cat('\014')
