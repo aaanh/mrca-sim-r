@@ -110,5 +110,23 @@ calc_sumofsquare <- function() {
 
 calc_sumofsquare()
 
+# (c) k^2 + (k+1)^2 + ... + n^2
+k <- readline(prompt="Enter k: ")
+n <- readline(prompt="Enter n: ")
+k <- as.integer(k)
+n <- as.integer(n)
+
+calcium <- function(){
+  sum <- 0
+  while (k <= n){
+    sum <- sum + k*k + 2*k*n + n*n
+    k <- k + 1
+  } 
+  return(sum)
+}
+result <- calcium()
+result
+
+
 # Clear screen
 cat('\014')
