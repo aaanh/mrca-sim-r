@@ -28,7 +28,6 @@ dieRoll <- sample(die, 500, replace=TRUE)
 tb <- table(dieRoll)
 piepercent <- round(100*dieRoll/sum(dieRoll), 1)
 pie(tb, labels=(1:12), radius=1, col=rainbow(12))
-barplot(tb, xlab="Roll", ylab="Freq")
 
 # (ii) 12-sided die, 500 times, pie chart, 1 is x3 more likely
 
@@ -73,7 +72,7 @@ play_lotto <- function() {
 }
 
 numTix <- play_lotto()
-print("*** It took: ", numTix, "***")
+numTix
 
 ##### Exercise 2: Functions
 # a) Sum of integers
