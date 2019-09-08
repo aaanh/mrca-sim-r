@@ -126,6 +126,9 @@ calcium <- function(){
 result <- calcium()
 result
 
+###### Exercise 3: Probability Distribution
+
+
 
 # Clear screen
 cat('\014')
