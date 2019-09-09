@@ -28,7 +28,6 @@ dieRoll <- sample(die, 500, replace=TRUE)
 tb <- table(dieRoll)
 piepercent <- round(100*dieRoll/sum(dieRoll), 1)
 pie(tb, labels=(1:12), radius=1, col=rainbow(12))
-barplot(tb, xlab="Roll", ylab="Freq")
 
 # (ii) 12-sided die, 500 times, pie chart, 1 is x3 more likely
 
@@ -58,6 +57,7 @@ desiredoutcomes <- sumn()
 estprob <- c(desiredoutcomes/10000)
 estprob
 
+<<<<<<< HEAD
 # (b) Playing the lottery
 
 # 4
@@ -68,10 +68,22 @@ play_lotto <- function(){
   while (!all(ticket==draw)){
     n <- n+1
     draw <- sample(1:49, 6, replace=FALSE)
+=======
+# (b) Lottery #####
+
+play_lotto <- function() {
+  n <- 0
+  ticket <- c(6,9,4,2)
+  draw <- c(0,0,0,0)
+  while (!all(ticket==draw)) {
+    n <- n+1
+    draw <- sample(1:49, 4, replace=FALSE)
+>>>>>>> 7381029d30932225ac99b9a7b0205e4ad86394ec
     print(draw)
   }
   return(n)
 }
+<<<<<<< HEAD
 play_lotto()
 ###########
 # 6
@@ -91,6 +103,67 @@ play_lotto()
 ##########
 
 ### Exercise 1: Simulating Probabilities
+=======
+
+numTix <- play_lotto()
+numTix
+
+##### Exercise 2: Functions
+# a) Sum of integers
+
+# Prompt user for input
+
+calc_sum <- function() {
+  sum <- 0
+  i <- 0
+  n <- readline(prompt="Enter n: ")
+  n <- as.integer(n)
+    while (i <= n) {
+    sum <- sum + i
+    i <- i + 1
+  }
+  return(sum)
+}
+
+calc_sum()
+
+# b) Product of integers
+
+calc_sumofsquare <- function() {
+  sum1 <- 0
+  i <- 0
+  m <- readline(prompt="Enter m: ")
+  m <- as.integer(m)
+  while(i <= m){
+    sum1 <- sum1 + i*i
+    i <- i + 1
+  }
+  return(sum1)
+}
+
+calc_sumofsquare()
+
+# (c) k^2 + (k+1)^2 + ... + n^2
+k <- readline(prompt="Enter k: ")
+n <- readline(prompt="Enter n: ")
+k <- as.integer(k)
+n <- as.integer(n)
+
+calcium <- function(){
+  sum <- 0
+  while (k <= n){
+    sum <- sum + k*k + 2*k*n + n*n
+    k <- k + 1
+  } 
+  return(sum)
+}
+result <- calcium()
+result
+
+###### Exercise 3: Probability Distribution
+
+
+>>>>>>> 7381029d30932225ac99b9a7b0205e4ad86394ec
 
 # Clear screen
 cat('\014')
