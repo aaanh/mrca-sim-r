@@ -58,5 +58,39 @@ desiredoutcomes <- sumn()
 estprob <- c(desiredoutcomes/10000)
 estprob
 
+# (b) Playing the lottery
+
+# 4
+play_lotto <- function(){
+  n <- 0
+  ticket <- c(6,9,4,2,1,24) # here
+  draw <- c(0,0,0,0,0,0) # init vect that will contain the numbers drawn
+  while (!all(ticket==draw)){
+    n <- n+1
+    draw <- sample(1:49, 6, replace=FALSE)
+    print(draw)
+  }
+  return(n)
+}
+play_lotto()
+###########
+# 6
+play_lotto <- function(){
+  n <- 0
+  ticket <- c(6,9,4,2) # here
+  draw <- c(0,0,0,0) # init vect that will contain the numbers drawn
+  while (!all(ticket==draw)){
+    n <- n+1
+    draw <- sample(1:49, 4, replace=FALSE)
+    print(draw)
+  }
+  return(n)
+}
+play_lotto()
+
+##########
+
+### Exercise 1: Simulating Probabilities
+
 # Clear screen
 cat('\014')
