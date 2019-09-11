@@ -149,7 +149,8 @@ result <- calcium()
 result
 
 ###### Exercise 3: Probability Distribution
-
+# This exercise deals with binomial distribution and various other distributions
+cups <- sample(33357600)
 
 
 # Clear screen
