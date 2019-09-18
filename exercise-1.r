@@ -57,24 +57,11 @@ desiredoutcomes <- sumn()
 estprob <- c(desiredoutcomes/10000)
 estprob
 
+###############################
+
 # (b) Playing the lottery
 
-# 4
-play_lotto <- function(){
-  n <- 0
-  ticket <- c(6,9,4,2,1,24) # here
-  draw <- c(0,0,0,0,0,0) # init vect that will contain the numbers drawn
-  while (!all(ticket==draw)){
-    n <- n+1
-    draw <- sample(1:49, 6, replace=FALSE)
-    print(draw)
-  }
-  return(n)
-}
-
-play_lotto()
-###########
-# 6
+# 4 numbers
 play_lotto <- function(){
   n <- 0
   ticket <- c(6,9,4,2) # here
@@ -86,83 +73,47 @@ play_lotto <- function(){
   }
   return(n)
 }
-play_lotto()
 
-##########
+total_draws <- play_lotto() # assign return value to a var
 
-### Exercise 1: Simulating Probabilities
-=======
+# Assume that one year has 52 weeks and leap years are not accounted for.
+# Playing once per week -> total_plays / weeks
+weeks <- 52
+price_ticket <- 3
+jackpot <- 16*10^6
 
-numTix <- play_lotto()
-numTix
+cat('Number of total draws: ', total_draws, '\n') # print that var
+cat('Number of years before winning: ', total_draws/weeks, '\n') # print number of years before winning
+cat('Net earning: ', (jackpot - total_draws*price_ticket), '\n') # print net earning
 
-##### Exercise 2: Functions
-# a) Sum of integers
+###########
 
-# Prompt user for input
-
-calc_sum <- function() {
-  sum <- 0
-  i <- 0
-  n <- readline(prompt="Enter n: ")
-  n <- as.integer(n)
-    while (i <= n) {
-    sum <- sum + i
-    i <- i + 1
+# 6 numbers
+play_lotto <- function(){
+  n <- 0
+  ticket <- c(6,9,4,2,24,7) # here
+  draw <- c(0,0,0,0,0,0) # init vect that will contain the numbers drawn
+  while (!all(ticket==draw)){
+    n <- n+1
+    draw <- sample(1:49, 6, replace=FALSE)
+    print(draw)
   }
-  return(sum)
+  return(n)
 }
 
-calc_sum()
+total_draws <- play_lotto() # assign return value to a var
 
-# b) Product of integers
+# Assume that one year has 52 weeks and leap years are not accounted for.
+# Playing once per week -> total_plays / weeks
+weeks <- 52
+price_ticket <- 3
+jackpot <- 16*10^6
 
-calc_sumofsquare <- function() {
-  sum1 <- 0
-  i <- 0
-  m <- readline(prompt="Enter m: ")
-  m <- as.integer(m)
-  while(i <= m){
-    sum1 <- sum1 + i*i
-    i <- i + 1
-  }
-  return(sum1)
-}
+cat('Number of total draws: ', total_draws) # print that var
+cat('Number of years before winning: ', total_draws/weeks) # print number of years before winning
+cat('Net earning: ', (jackpot - total_draws*price_ticket)) # print net earning
 
-calc_sumofsquare()
-
-# (c) k^2 + (k+1)^2 + ... + n^2
-k <- readline(prompt="Enter k: ")
-n <- readline(prompt="Enter n: ")
-k <- as.integer(k)
-n <- as.integer(n)
-
-calcium <- function(){
-  sum <- 0
-  while (k <= n){
-    sum <- sum + k*k + 2*k*n + n*n
-    k <- k + 1
-  } 
-  return(sum)
-}
-result <- calcium()
-result
-
-# (d) Rewriting function in (c) to call function in (b)
-
-
-###### Exercise 3: Probability Distribution
-# This exercise deals with binomial distribution and various other distributions
-total_cups <- 33357600
-
-good_cups <- total_cups/6
-bad_cups <- total_cups - good_cups
-kirkland_cups <- 8000
-twogirlsonecup <- 1300
-
-cat("dhyper (quantile only) = ", dhyper(twogirlsonecup, good_cups, bad_cups, kirkland_cups))
-
-cat("phyper (cumulative) = ", phyper(twogirlsonecup, good_cups, bad_cups, kirkland_cups))
+###########################
 
 # Clear screen
 cat('\014')
