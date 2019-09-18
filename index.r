@@ -148,10 +148,21 @@ calcium <- function(){
 result <- calcium()
 result
 
+# (d) Rewriting function in (c) to call function in (b)
+
+
 ###### Exercise 3: Probability Distribution
 # This exercise deals with binomial distribution and various other distributions
-cups <- sample(33357600)
+total_cups <- 33357600
 
+good_cups <- total_cups/6
+bad_cups <- total_cups - good_cups
+kirkland_cups <- 8000
+twogirlsonecup <- 1300
+
+cat("dhyper (quantile only) = ", dhyper(twogirlsonecup, good_cups, bad_cups, kirkland_cups))
+
+cat("phyper (cumulative) = ", phyper(twogirlsonecup, good_cups, bad_cups, kirkland_cups))
 
 # Clear screen
 cat('\014')
