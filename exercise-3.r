@@ -20,6 +20,8 @@ pacman::p_load(pacman, dplyr, GGally, ggplot2, ggthemes,
 
 ###### Exercise 3: Probability Distribution
 # This exercise deals with binomial distribution and various other distributions
+
+# (a) Kirkland Cups problem with hypergeometric distribution
 total_cups <- 33357600
 
 good_cups <- total_cups/6 # winning cups
@@ -30,6 +32,10 @@ desired_cups <- 1300 # desired cups to win
 cat("dhyper (quantile only) = ", dhyper(desired_cups, good_cups, bad_cups, kirkland_cups))
 
 cat("phyper (cumulative) = ", phyper(desired_cups, good_cups, bad_cups, kirkland_cups))
+
+# (b) Hockey problem with Poisson distribution
+
+# (c)
 
 # Clear screen
 cat('\014')

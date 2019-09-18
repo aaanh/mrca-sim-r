@@ -23,7 +23,7 @@ pacman::p_load(pacman, dplyr, GGally, ggplot2, ggthemes,
 
 # Prompt user for input
 
-calc_sum <- function() {
+int_sum <- function() {
   sum <- 0
   i <- 0
   n <- readline(prompt="Enter n: ")
@@ -35,11 +35,11 @@ calc_sum <- function() {
   return(sum)
 }
 
-calc_sum()
+cat('Sum of integers: ', int_sum())
 
 # b) Product of integers
 
-calc_sumofsquare <- function() {
+square_sum <- function() {
   sum1 <- 0
   i <- 0
   m <- readline(prompt="Enter m: ")
@@ -51,7 +51,7 @@ calc_sumofsquare <- function() {
   return(sum1)
 }
 
-calc_sumofsquare()
+cat('Sum of squares is: ', square_sum())
 
 # (c) k^2 + (k+1)^2 + ... + n^2
 # while loop to force input k<=n
@@ -76,8 +76,8 @@ calcium <- function(){
   } 
   return(sum)
 }
-result <- calcium()
-result
+
+cat('Sum is: ', calcium())
 
 # (d) Rewriting function in (c) to call function in (b)
 
