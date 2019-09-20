@@ -23,7 +23,6 @@ pacman::p_load(pacman, dplyr, GGally, ggplot2, ggthemes,
 
 # (a) Kirkland Cups problem with hypergeometric distribution
 total_cups <- 33357600
-
 good_cups <- total_cups/6 # winning cups
 bad_cups <- total_cups - good_cups # non-winning cups
 kirkland_cups <- 8000 # cups given to kirkland
@@ -35,7 +34,8 @@ cat("phyper (cumulative) = ", phyper(desired_cups, good_cups, bad_cups, kirkland
 
 # (b) Hockey problem with Poisson distribution
 
-# (c)
+# (c) 
+
 
 # Clear screen
 cat('\014')

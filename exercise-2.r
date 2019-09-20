@@ -37,9 +37,11 @@ int_sum <- function() {
 
 cat('Sum of integers: ', int_sum())
 
-# b) Product of integers
+#################################
 
-square_sum <- function() {
+# b) Sum of integers squared
+
+sumSquare <- function() {
   sum1 <- 0
   i <- 0
   m <- readline(prompt="Enter m: ")
@@ -51,35 +53,50 @@ square_sum <- function() {
   return(sum1)
 }
 
-cat('Sum of squares is: ', square_sum())
+cat('Sum of squares is: ', sumSquare(), '\n')
+
+#########################
 
 # (c) k^2 + (k+1)^2 + ... + n^2
 # while loop to force input k<=n
 check=FALSE
 while(check==FALSE) {
-    cat('ENTER k AND n, s.t. k<=n...')
-    k <- readline(prompt="Enter k: ")
-    n <- readline(prompt="Enter n: ")
-    k <- as.integer(k)
-    n <- as.integer(n)
-    if (k<=n) {
-        check=TRUE
-    }
+  cat('ENTER k AND n, s.t. k<=n...', '\n')
+  k <- readline(prompt="Enter k: ")
+  cat('\n')
+  n <- readline(prompt="Enter n: ")
+  k <- as.integer(k)
+  n <- as.integer(n)
+  if (k<=n) {
+    check=TRUE
+  }
 }
 
 # create sum function
-calcium <- function(){
+sumSquareTrunc <- function(){
   sum <- 0
-  while (k <= n){
-    sum <- sum + k*k + 2*k*n + n*n
-    k <- k + 1
-  } 
+  if (n == k) {
+    sum = k^2
+  }
+  else if (k==1) {
+    sum = 1
+  }
+  else {
+    while (k <= n) {
+      sum <- sum + k^2
+      k <- k + 1
+    } 
+  }
   return(sum)
 }
 
-cat('Sum is: ', calcium())
+cat('Sum is: ', sumSquareTrunc(), '\n')
 
 # (d) Rewriting function in (c) to call function in (b)
+# reCURSEive
+
+
+sum <- rewrite()
 
 # Clear screen
 cat('\014')
