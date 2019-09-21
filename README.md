@@ -5,7 +5,7 @@
 1. pacman
 2. dplyr, ggplot2, ggthemes, plotly
 --------------------------------------------------------
-* Includes exercises leading up to the actual project *
+* Includes exercises leading up to the actual project
 
 ## Exercise 1: Simulating Probabilities
 
@@ -13,6 +13,6 @@
 
 
 ## Exercise 3: Probability Distributions
-* Distributions used in this exercise and the corresponding functions: *
+* Distributions used in this exercise and the corresponding functions:
 - Binomial/Hypergeometric Distribution: dhyper() and phyper()
 - Poisson Distribution: dpois() and ppois()
