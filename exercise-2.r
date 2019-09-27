@@ -95,8 +95,9 @@ cat('Sum is: ', sumSquareTrunc(), '\n')
 # (d) Rewriting function in (c) to call function in (b)
 # reCURSEive
 
-
-sum <- rewrite()
+rewrite <- function() {
+  
+}
 
 # Clear screen
 cat('\014')

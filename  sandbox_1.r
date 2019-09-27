@@ -31,18 +31,15 @@ sumSquareTrunc <- function(k,n) {
   if (k == n) {
     sum <- k^2 
   }
-  else if (k <= n) {
+  if (k <= n) {
     while (k <= n) {
       sum <- sum + k^2
       print(sum)
       k <- k + 1
     }
   }
-  else if (k == 1) {
+  if (k == 1) {
     sum <- sumSquare(n)
-  }
-  else {
-    sum <- 1
   }
   return(sum)
 }
