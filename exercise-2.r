@@ -41,7 +41,7 @@ cat('Sum of integers: ', int_sum())
 
 # b) Sum of integers squared
 
-sumSquare <- function() {
+sumSquare <- function(m) {
   sum1 <- 0
   i <- 0
   m <- readline(prompt="Enter m: ")
@@ -53,7 +53,17 @@ sumSquare <- function() {
   return(sum1)
 }
 
-cat('Sum of squares is: ', sumSquare(), '\n')
+cat('Sum of squares to m is: ', sumSquare(as.integer(readline(prompt="Enter m: "))))
+
+# Bonus recursion
+sumSquareRe <- function(x) {
+  if (x == 1) return (1)
+  else return (sumSquareRe(x-1)+x^2)
+}
+
+cat('Sum of squares to n is: ', sumSquareRe(as.integer(readline(prompt="Enter n: "))))
+
+
 
 #########################
 
@@ -73,27 +83,11 @@ while(check==FALSE) {
 }
 
 # create sum function
-sumSquareTrunc <- function(){
-  sum <- 0
-  if (n == k) {
-    sum = k^2
-  }
-  else if (k==1) {
-    sum = 1
-  }
-  else {
-    while (k <= n) {
-      sum <- sum + k^2
-      k <- k + 1
-    } 
-  }
-  return(sum)
+sumSquare_c <- function(k, n){
+  
 }
 
-cat('Sum is: ', sumSquareTrunc(), '\n')
-
 # (d) Rewriting function in (c) to call function in (b)
-# reCURSEive
 
 rewrite <- function() {
   
