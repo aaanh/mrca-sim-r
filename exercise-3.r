@@ -33,8 +33,15 @@ cat("dhyper (quantile only) = ", dhyper(desired_cups, good_cups, bad_cups, kirkl
 cat("phyper (cumulative) = ", phyper(desired_cups, good_cups, bad_cups, kirkland_cups))
 
 # (b) Hockey problem with Poisson distribution
+require(graphics)
+E1 <- 29
+games <- 82
+E82 <- E1 * 82 # average scores per season
+cat('E[X] per season of 82 games: ', E82, '\n')
+x = 2400
+dpois(x, E82, log = FALSE)
 
-# (c) 
+# (c) On same graph plot cdf for 2 diff. cont. dist. (uniform, normal, t, chi^2, or Fisher)
 
 
 # Clear screen

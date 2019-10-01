@@ -57,6 +57,7 @@ desiredoutcomes <- sumn()
 estprob <- c(desiredoutcomes/10000)
 estprob
 
+
 ###############################
 
 # (b) Playing the lottery
