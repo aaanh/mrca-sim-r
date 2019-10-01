@@ -10,94 +10,53 @@
 # Prerequisites
 ## Details can be found in README.md
 
-# Install & load pacman
-install.packages("pacman")
-require(pacman)
-# Use pacman to install and require other packages
-pacman::p_load(pacman, dplyr, GGally, ggplot2, ggthemes, 
-               ggvis, httr, lubridate, plotly, rio, rmarkdown, shiny, 
-               stringr, tidyr)
-
 ##### Exercise 2: Functions
-# a) Sum of integers
 
-# Prompt user for input
+n <- readline(prompt("Enter n: "))
+n <- as.integer(n)
+k <- readline(prompt("Enter k: "))
+k <- as.integer(k)
 
-int_sum <- function() {
-  sum <- 0
+sumInteger <- function(n) {
   i <- 0
-  n <- readline(prompt="Enter n: ")
-  n <- as.integer(n)
-    while (i <= n) {
+  sum <- 0
+  while (i <= n) {
     sum <- sum + i
-    i <- i + 1
   }
   return(sum)
 }
 
-cat('Sum of integers: ', int_sum())
+sum1 <- sumInteger(n)
 
-#################################
-
-# b) Sum of integers squared
-
-sumSquare <- function() {
-  sum1 <- 0
-  i <- 0
-  m <- readline(prompt="Enter m: ")
-  m <- as.integer(m)
-  while(i <= m){
-    sum1 <- sum1 + i*i
-    i <- i + 1
-  }
-  return(sum1)
-}
-
-cat('Sum of squares is: ', sumSquare(), '\n')
-
-#########################
-
-# (c) k^2 + (k+1)^2 + ... + n^2
-# while loop to force input k<=n
-check=FALSE
-while(check==FALSE) {
-  cat('ENTER k AND n, s.t. k<=n...', '\n')
-  k <- readline(prompt="Enter k: ")
-  cat('\n')
-  n <- readline(prompt="Enter n: ")
-  k <- as.integer(k)
-  n <- as.integer(n)
-  if (k<=n) {
-    check=TRUE
-  }
-}
-
-# create sum function
-sumSquareTrunc <- function(){
+sumSquare <- function(n) {
   sum <- 0
-  if (n == k) {
-    sum = k^2
+  i <- 0
+  while (i <= n) {
+    sum <- sum + i^2
+    i = i + 1
   }
-  else if (k==1) {
-    sum = 1
+  return(sum)
+}
+
+sum2 <- sumSquare(n)
+
+sumSquareTrunc <- function(k,n) {
+  sum <- 0
+  if (k == n) {
+    sum <- k^2 
   }
-  else {
+  if (k <= n) {
     while (k <= n) {
       sum <- sum + k^2
+      print(sum)
       k <- k + 1
-    } 
+    }
+  }
+  if (k == 1) {
+    sum <- sumSquare(n)
   }
   return(sum)
 }
 
-cat('Sum is: ', sumSquareTrunc(), '\n')
-
-# (d) Rewriting function in (c) to call function in (b)
-# reCURSEive
-
-sumSquareCallFn <- function(){
-  
-}
-
-# Clear screen
-cat('\014')
+sum3 <- sumSquareTrunc(k,n)
+sum3
