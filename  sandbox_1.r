@@ -1,48 +1,60 @@
-n <- readline(prompt("Enter n: "))
-n <- as.integer(n)
-k <- readline(prompt("Enter k: "))
-k <- as.integer(k)
+##### Exercise 2: Functions
 
-sumInteger <- function(n) {
-  i <- 0
-  sum <- 0
-  while (i <= n) {
-    sum <- sum + i
-  }
-  return(sum)
+# Get user input first for n and k parameters
+
+n <- as.integer(readline(prompt="Enter n: "))
+k <- as.integer(readline(prompt="Enter k: "))
+
+# a) Sum of integers
+
+# Prompt user for input
+
+sumInt <- function(n) {
+  if (n == 1) return (1)
+  else return(sumInt(n-1)+(n))
 }
 
-sum1 <- sumInteger(n)
+cat('Sum of integers to n: ', sumInt(8), '\n')
+1+2+3+4+5+6+7+8
+
+# b) Sum of integers squared
 
 sumSquare <- function(n) {
+  if (n == 1) return (1)
+  else return (sumSquare(n-1)+n^2)
+}
+
+cat('Sum of Square is: ', sumSquare(n))
+
+# (c) Sum of squares from k to n
+
+sumSquaredkn <- function(k,n) {
   sum <- 0
-  i <- 0
-  while (i <= n) {
+  for (i in k:n) {
     sum <- sum + i^2
-    i = i + 1
   }
   return(sum)
 }
 
-sum2 <- sumSquare(n)
+cat('Sum is: ', sumSquaredkn(5,8), '\n')
 
-sumSquareTrunc <- function(k,n) {
+# (d) Rewriting function in (c) to call function in (b)
+
+sum <- rewrite() {
   sum <- 0
-  if (k == n) {
-    sum <- k^2 
+  if (n == k) {
+    sum = k^2
   }
-  if (k <= n) {
+  else if (k == 1) {
+    sumSquare(n)
+  }
+  else {
     while (k <= n) {
       sum <- sum + k^2
-      print(sum)
-      k <- k + 1
+      k <- k+1 
     }
   }
-  if (k == 1) {
-    sum <- sumSquare(n)
-  }
-  return(sum)
 }
 
-sum3 <- sumSquareTrunc(k,n)
-sum3
+# Clear screen
+cat('\014')

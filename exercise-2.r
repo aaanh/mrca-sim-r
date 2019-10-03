@@ -12,21 +12,25 @@
 
 ##### Exercise 2: Functions
 
-n <- readline(prompt("Enter n: "))
-n <- as.integer(n)
-k <- readline(prompt("Enter k: "))
-k <- as.integer(k)
+n <- as.integer(readline(prompt="Enter n: "))
+k <- as.integer(readline(prompt="Enter k: "))
+
+print(k)
+print(n)
+
 
 sumInteger <- function(n) {
-  i <- 0
-  sum <- 0
-  while (i <= n) {
-    sum <- sum + i
+  sum
+  if (n = 0) {
+    sum =  0 
   }
-  return(sum)
+  else {
+    return (sum=sumInteger(n-1)+sum)
+  }
 }
 
-sum1 <- sumInteger(n)
+print(sumInteger(n))
+
 
 sumSquare <- function(n) {
   sum <- 0
