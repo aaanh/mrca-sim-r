@@ -14,9 +14,9 @@
 install.packages("pacman")
 require(pacman)
 # Use pacman to install and require other packages
-pacman::p_load(pacman, dplyr, GGally, ggplot2, ggthemes, 
-               ggvis, httr, lubridate, plotly, rio, rmarkdown, shiny, 
-               stringr, tidyr) 
+# pacman::p_load(pacman, dplyr, GGally, ggplot2, ggthemes, 
+#                ggvis, httr, lubridate, plotly, rio, rmarkdown, shiny, 
+#                stringr, tidyr) 
 
 ### Exercise 1: Simulating Probabilities
 
