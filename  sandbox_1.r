@@ -2,8 +2,8 @@
 
 # Get user input first for n and k parameters
 
-n <- as.integer(readline(prompt="Enter n: "))
 k <- as.integer(readline(prompt="Enter k: "))
+n <- as.integer(readline(prompt="Enter n: "))
 
 # a) Sum of integers
 
@@ -36,25 +36,29 @@ sumSquaredkn <- function(k,n) {
   return(sum)
 }
 
-cat('Sum is: ', sumSquaredkn(5,8), '\n')
+cat('Sum is: ', sumSquaredkn(k,n), '\n')
 
 # (d) Rewriting function in (c) to call function in (b)
 
-sum <- rewrite() {
+rewrite <- function(k,n) {
   sum <- 0
   if (n == k) {
-    sum = k^2
-  }
-  else if (k == 1) {
-    sumSquare(n)
+    return(k^2)
   }
   else {
     while (k <= n) {
       sum <- sum + k^2
       k <- k+1 
     }
+    return(sum)
   }
 }
+
+cat("Sum of squared k to n = ", rewrite(9,9), "\n")
+# Test case 1: rewrite(8,9) = 145
+# Test case 2: rewrite(1,9) = 285
+# Test case 3: rewrite(9,9) = 81
+
 
 # Clear screen
 cat('\014')
