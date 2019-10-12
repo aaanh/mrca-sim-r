@@ -33,15 +33,26 @@ cat("dhyper (quantile only) = ", dhyper(desired_cups, good_cups, bad_cups, kirkl
 cat("phyper (cumulative) = ", phyper(desired_cups, good_cups, bad_cups, kirkland_cups))
 
 # (b) Hockey problem with Poisson distribution
-require(graphics)
-E1 <- 29
+e_shots_game <- 29
 games <- 82
-E82 <- E1 * 82 # average scores per season
-cat('E[X] per season of 82 games: ', E82, '\n')
-x = 2400
-dpois(x, E82, log = FALSE)
+e_shots_season <- e_shots_game * games
 
-# (c) On same graph plot cdf for 2 diff. cont. dist. (uniform, normal, t, chi^2, or Fisher)
+# trying to find the probability of getting more than 2400 shots per season...
+# P(X>=2400) = P(X=0) + ... + P(X=2399)
+interesting_outcome <- 2400
+complement <- function(){
+    total_probability <- 0
+        for (x in 0:(interesting_outcome-1)) {
+            total_probability <- total_probability + dpois(x, e_shots_season)
+    }
+    return(total_probability)
+}
+
+p <- 1 - complement()
+print(p)
+
+# At this point, we have the probability of the interesting outcome of scoring >= 2400 per season.
+
 
 
 # Clear screen
