@@ -51,8 +51,7 @@ complement <- function(){
 p <- 1 - complement()
 print(p)
 
-# At this point, we have the probability of the interesting outcome of scoring >= 2400 per season.
-
+# (c) Plotting the cdf for X^2 and Fisher
 
 
 # Clear screen
