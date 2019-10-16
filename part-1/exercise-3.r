@@ -48,11 +48,15 @@ complement <- function(){
     return(total_probability)
 }
 
+# or alternatively, using the cdf function ppois(x,lambda,lower.tail):
+cat('The probability is: ', ppois(2400, lambda = 29*82, lower.tail = FALSE), '\n')
+
 p <- 1 - complement()
 print(p)
 
 # (c) Plotting the cdf for X^2 and Fisher
-
+plot(pchisq(-1:15, df=1), type="line")
+lines(pnorm(-1:15, mean = 3, sd = 4), col="blue")
 
 # Clear screen
 cat('\014')
