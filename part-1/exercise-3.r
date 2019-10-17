@@ -41,7 +41,7 @@ e_shots_season <- e_shots_game * games
 interesting_outcome <- 2400
 complement <- function(){
     total_probability <- 0
-        for (x in 0:(interesting_outcome-1)) {
+        for (x in 0:(interesting_outcome)) {
             total_probability <- total_probability + dpois(x, e_shots_season)
     }
     return(total_probability)
