@@ -2,10 +2,9 @@
 # John Abbott College, Montreal, CANADA.
 # Github: https://github.com/hirumaakane-ha/r-project-2019
 # License: MIT License
-# Course: Statistics
+# Course: Statistics DDD
 # Instructor: Luiz T. Kazuo
-# This R program and its repository on Github is a course project. This project is built upon the MRCA (Most Recent Common Ancestors) paper by Dr. Chang (Yale University) et al. 
-# A copy of Dr. Chang's paper could also be found in this repository.
+# This R program and its repository on Github is a course project.
 
 # Prerequisites
 ## Details can be found in README.md
@@ -53,9 +52,13 @@ cat('The probability is: ', ppois(2400, lambda = 29*82, lower.tail = FALSE), '\n
 
 p <- 1 - complement()
 print(p)
+plot(ppois(1:2400, lambda = 29*82, lower.tail = FALSE), type='line')
 
-# (c) Plotting the cdf for X^2 and Fisher
-plot(pchisq(-1:15, df=1), type="line")
+# (c) Plotting the cdf for X^2 and Normal Distribution
+xlabel <- "Value of X"
+ylabel <- "Density of Probability"
+maintitle <- "The probability of obtaining a corresponding x value with probability y of a normal distribution and chi-squared distribution"
+plot(pchisq(-1:15, df=1), type="line", col="red", xlab=xlabel, ylab=ylabel, sub=maintitle,font.sub=2)
 lines(pnorm(-1:15, mean = 3, sd = 4), col="blue")
 
 # Clear screen

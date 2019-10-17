@@ -2,10 +2,9 @@
 # John Abbott College, Montreal, CANADA.
 # Github: https://github.com/hirumaakane-ha/r-project-2019
 # License: MIT License
-# Course: Statistics
+# Course: Statistics DDD
 # Instructor: Luiz T. Kazuo
-# This R program and its repository on Github is a course project. This project is built upon the MRCA (Most Recent Common Ancestors) paper by Dr. Chang (Yale University) et al. 
-# A copy of Dr. Chang's paper could also be found in this repository.
+# This R program and its repository on Github is a course project.
 
 # Prerequisites
 ## Details can be found in README.md
@@ -55,8 +54,12 @@ sumn <- function(){
 }
 desiredoutcomes <- sumn()
 estprob <- c(desiredoutcomes/10000)
-estprob
-
+theoprob <- 0.0625
+perror <- (abs(estprob-theoprob))/mean(estprob,theoprob)*100
+cat('Estimated probability (experimental): ', estprob, '\n')
+cat('Theoretical probability: ', theoprob,'\n')
+cat('Percentage error: ', perror, '\n')
+cat(rep('\n',5))
 
 ###############################
 
@@ -65,12 +68,12 @@ estprob
 # 4 numbers
 play_lotto <- function(){
   n <- 0
-  ticket <- c(6,9,4,2) # here
+  ticket <- sort(c(6,9,4,2)) # here
   draw <- c(0,0,0,0) # init vect that will contain the numbers drawn
-  while (!all(ticket==draw)){
+  while (!all(ticket==sort(draw))){
     n <- n+1
     draw <- sample(1:49, 4, replace=FALSE)
-    print(draw)
+    print(sort(draw))
   }
   return(n)
 }
@@ -92,12 +95,12 @@ cat('Net earning: ', (jackpot - total_draws*price_ticket), '\n') # print net ear
 # 6 numbers
 play_lotto <- function(){
   n <- 0
-  ticket <- c(6,9,4,2,24,7) # here
+  ticket <- sort(c(6,9,4,2,24,7)) # here
   draw <- c(0,0,0,0,0,0) # init vect that will contain the numbers drawn
-  while (!all(ticket==draw)){
+  while (!all(ticket==sort(draw))){
     n <- n+1
     draw <- sample(1:49, 6, replace=FALSE)
-    print(draw)
+    print(sort(draw))
   }
   return(n)
 }
