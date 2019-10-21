@@ -9,7 +9,7 @@ dummy <- a
 dummy
 dummy <- c(a, sample(1:n, 2, replace=FALSE))
 dummy
-union(dummy, c(a, sample(1:n, 2, replace=FALSE)))
+length(union(dummy, c(a, sample(1:n, 2, replace=FALSE))))
 a <- a + sample(1:n, 2, replace=FALSE)
 b <- b + sample(1:n, 2, replace=FALSE)
 b <- b + sample(1:n, 2, replace=FALSE)
