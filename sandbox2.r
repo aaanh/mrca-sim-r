@@ -1,15 +1,42 @@
-n <- 3
-a <- b <- c <- c(0,0)
-# enumerate gen(-1)
-a <- sample(1:n, 2, replace=FALSE)
-b <- sample(1:n, 2, replace=FALSE)
-c <- sample(1:n, 2, replace=FALSE)
-# enumerate gen(-2)
-dummy <- a
-dummy
-dummy <- c(a, sample(1:n, 2, replace=FALSE))
-dummy
-length(union(dummy, c(a, sample(1:n, 2, replace=FALSE))))
-a <- a + sample(1:n, 2, replace=FALSE)
-b <- b + sample(1:n, 2, replace=FALSE)
-b <- b + sample(1:n, 2, replace=FALSE)
+n <- 5
+
+# suppose there is an arbitrary gen(x) as  the current gen
+# the enumerator function is going to choose the gen(x-1)
+
+init <- function(n) {
+    g <- list()
+    for (i in 1:n) {
+        g <- c(g, list(sample(1:n, 2, replace=TRUE)))    
+    }
+    return(g)         
+}
+
+g <- init(n)
+print(g)
+
+gen_x <- function(g, n) {
+    for (i in 1:n) {
+        g[[i]] <- union(g[[i]], sample(1:n, 2, replace=TRUE)) 
+    }
+    return(g)
+}
+
+g <- gen_x(g, n)
+
+gencounter <- 0
+
+yesmrca <- FALSE
+
+while (yesmrca <- FALSE) {
+    for (i in 1:n) {
+        if (length(g[[i]]) != n) {
+            g <- gen_x(g, n)
+            gencounter <- gencounter + 1
+        }
+        else {
+            yesmrca <- FALSE
+        }
+}
+}
+print(g)
+print(gencounter)
