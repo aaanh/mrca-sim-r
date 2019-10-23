@@ -1,0 +1,5 @@
+setwd('~/dev/r-project-2019/')
+cd
+list
+ls
+sandbox2.r
