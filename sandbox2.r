@@ -18,6 +18,8 @@ gen_x <- function(g, n) {
     return(g)
 }
 
+g <- init(n)
+g
 g <- gen_x(g, n)
 
 checkMrca <- function(g, n) {
