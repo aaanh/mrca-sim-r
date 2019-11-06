@@ -2,16 +2,25 @@
 # Iteration by Nguyen Hoang Anh, based on instructor L. K. Takei's abstraction
 # MIT License, 2019
 
-# Initialize
-n <- as.integer(readline(prompt="Input population size: "))
+n <- 10 # population size
+
+# initialize current gen: l_d
 l_d <- list()
 for (i in 1:n) {
-    gen0[[i]] <- i
+    l_d[[i]] <- c(i)
 }
-l_d
 
-l_d
-# Functions
+l_p <- list()
+for (i in 1:n) {
+    l_p[[i]] <- sample(1:n, 2, replace=TRUE)
+}
 
-# Main
+isChildren <- function(i) {
+    v_c <- list()
+    for (j in length(v_c)) {
+        if (is.Element(v_c, l_p[[j]])) {
+            v_c <- union(v_C, l_p[[j]])
+        }
+    }
+}
 
