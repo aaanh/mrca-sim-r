@@ -7,7 +7,7 @@
 2. dplyr, ggplot2, ggthemes, plotly
 ### Setting up development/testing env:
 1. Install R from https://cran.r-project.org/mirrors.html - choose the automatic CDN server link.
-2. Clone the repository here: git clone https://github.com/hirumaakane-ha/r-project-2019
+2. Clone the repository here: git clone https://github.com/zasshuwu/r-project-2019
 3. (Might need to setwd to repository root to run code.)
 4. Attention: These scripts were coded on x64-darwin platform with R version 3.6.1, and tested for compability on Ubuntu 19.04 LTS and Windows 10 lastest version in August, 2019. Dependencies and env factors might break if packages are to deprecate in the future.
 --------------------------------------------------------
@@ -61,6 +61,7 @@ LICENSE.txt
 README.md
 sandbox.r
 sandbox1.r
-hoang-anh-report.docx
+sandbox2.r
+sandbox3.r
 ```
 ------------------------------------------------------------

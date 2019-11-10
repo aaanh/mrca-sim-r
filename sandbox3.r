@@ -10,10 +10,14 @@ for (i in 1:n) {
     l_d[[i]] <- c(i)
 }
 
+l_d # print list of descendants
+
 l_p <- list()
 for (i in 1:n) {
     l_p[[i]] <- sample(1:n, 2, replace=TRUE)
 }
+
+l_p # print list of ancestors from gen-1
 
 isChildren <- function(i) {
     v_c <- list()
