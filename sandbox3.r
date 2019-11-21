@@ -1,30 +1,85 @@
-# MRCA simulation program
-# Iteration by Nguyen Hoang Anh, based on instructor L. K. Takei's abstraction
-# MIT License, 2019
+n <- 10;
 
-n <- 10 # population size
+# list of parents
+l_p <- list();
 
-# initialize current gen: l_d
-l_d <- list()
-for (i in 1:n) {
-    l_d[[i]] <- c(i)
+# list of descendants
+l_d <- list();
+
+
+# returns all the children of individual i
+children_of <- function(i){
+	v_c <- vector();
+	
+	for (j in 1:n){
+		if (is.element(i, l_p[[j]])){
+			v_c <- append(v_c, j);
+		}
+	}
+	
+	return(v_c);
 }
 
-l_d # print list of descendants
 
-l_p <- list()
-for (i in 1:n) {
-    l_p[[i]] <- sample(1:n, 2, replace=TRUE)
+# initialize the list of descendants
+for (i in 1:n){
+	l_d[[i]] <- c(i);
 }
 
-l_p # print list of ancestors from gen-1
+# choose parents
+for (i in 1:n){
+	l_p[[i]] <- sample(1:n, size=2, replace=TRUE);
+}
 
-isChildren <- function(i) {
-    v_c <- list()
-    for (j in length(v_c)) {
-        if (is.Element(v_c, l_p[[j]])) {
-            v_c <- union(v_C, l_p[[j]])
-        }
+
+
+l_d_aux <- list()
+
+# update list of descendants
+for (i in 1:n){
+	v_c_aux <- children_of(i);
+	
+	l_d_aux[[i]] <- vector();
+	
+	for (j in v_c_aux){
+		l_d_aux[[i]] <- union(l_d_aux[[i]], l_d[[j]]);
+	}
+}
+
+l_d <- l_d_aux;
+
+l_d
+
+
+# initialize max_n
+local_max_n <- 0
+for (i in 1:n) {
+    if (local_max_n < length(l_d[[i]])) {
+        local_max_n <- length(l_d[[i]])
     }
 }
+local_max_n
 
+####### WHERE THE REPETITIVE STUFF HAPPENDS #########
+tmrca <- 0
+while (local_max_n < n) {
+	# update list of descendants
+	for (i in 1:n){
+		v_c_aux <- children_of(i);
+		
+		l_d_aux[[i]] <- vector();
+		
+		for (j in v_c_aux){
+			l_d_aux[[i]] <- union(l_d_aux[[i]], l_d[[j]]);
+		}
+	}
+	tmrca <- tmrca + 1
+	print(tmrca)
+	for (i in 1:n) {
+		if (local_max_n < length(l_d[[i]])) {
+			local_max_n <- length(l_d[[i]])
+		}
+		print(local_max_n)
+	}	
+}
+print(tmrca)
