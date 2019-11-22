@@ -50,7 +50,7 @@ index <- function(n) {
   # INITIALIZATION STEP AT THE BEGINNING
   # ------------------------------------
   # input pop size
-  n <- 50
+  n <- 100
 
   # init descendants list and parents list
   list_d <- list()
@@ -69,19 +69,27 @@ index <- function(n) {
 
   # PROCESSING STEPS
   # ------------------------------------
-  while (n_local < n) {
+  while (n_local != n) {
     list_p <- ChooseParents(n, list_p)
     list_d <- List_d_update(n, list_d, list_p, list_d_temp)
     n_local <- check_n_local(list_d, n, n_local)
+    print(n_local)
     tmrca <- tmrca + 1
   }
   
-  cat("Latest generation containing MRCA: ", "\n")
-  print(list_p)
+  # cat("Latest generation containing MRCA: ", "\n")
+  # print(list_d)
   # OUTPUT STEPS
   # ------------------------------------
   return(tmrca)
 }
 
-cat("Time to MRCA is: ", index(n), "\n")
+tmrca <- index(n)
+
+for (i in 1:10000){
+  tmrca <- tmrca + index(n)
+}
+
+
+cat("Time to MRCA is: ", tmrca/10000, "\n")
 
