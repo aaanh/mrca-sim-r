@@ -73,7 +73,7 @@ index <- function(n) {
     list_p <- ChooseParents(n, list_p)
     list_d <- List_d_update(n, list_d, list_p, list_d_temp)
     n_local <- check_n_local(list_d, n, n_local)
-    print(n_local)
+    # print(n_local)
     tmrca <- tmrca + 1
   }
   
@@ -85,11 +85,14 @@ index <- function(n) {
 }
 
 tmrca <- index(n)
+repetition <- 25
+vector_100 <- vector()
 
-for (i in 1:10000){
-  tmrca <- tmrca + index(n)
+
+for (i in 1:repetition){
+  tmrca <- index(n)
+  print(i)
+  vector_100[i] <- c(tmrca)
 }
-
-
-cat("Time to MRCA is: ", tmrca/10000, "\n")
-
+vector_100
+cat("Average Time to MRCA (TMRCA) is: ", tmrca/repetition, "\n")
