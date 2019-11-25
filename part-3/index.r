@@ -50,7 +50,7 @@ index <- function(n) {
   # INITIALIZATION STEP AT THE BEGINNING
   # ------------------------------------
   # input pop size
-  n <- 100
+  n <- 10000
 
   # init descendants list and parents list
   list_d <- list()
@@ -84,15 +84,48 @@ index <- function(n) {
   return(tmrca)
 }
 
-tmrca <- index(n)
 repetition <- 25
 vector_100 <- vector()
+vector_1000 <- vector()
+vector_5000 <- vector()
+vector_10000 <- vector()
+vector_4000 <- vector()
 
-
+# n = 100
 for (i in 1:repetition){
   tmrca <- index(n)
   print(i)
   vector_100[i] <- c(tmrca)
 }
-vector_100
-cat("Average Time to MRCA (TMRCA) is: ", tmrca/repetition, "\n")
+
+# n = 1000
+for (i in 1:repetition){
+  tmrca <- index(n)
+  print(i)
+  vector_1000[i] <- c(tmrca)
+}
+
+# n = 5000
+for (i in 1:repetition){
+  tmrca <- index(n)
+  print(i)
+  vector_5000[i] <- c(tmrca)
+}
+
+# n = 10000
+for (i in 1:repetition){
+  tmrca <- index(n)
+  print(i)
+  vector_10000[i] <- c(tmrca)
+}
+
+# n = 4000
+for (i in 1:repetition){
+  tmrca <- index(n)
+  print(i)
+  vector_12000[i] <- c(tmrca)
+}
+
+
+
+ # cat("Average Time to MRCA (TMRCA) is: ", tmrca/repetition, "\n")
