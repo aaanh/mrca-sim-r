@@ -2,13 +2,14 @@ require(plotly)
 # setwd("~/dev/r-project-2019/results/") # For personal macOS dev env (MacBook)
 # setwd("C:/Users/Nogamioka/Desktop/dev/r-project-2019/results/") # For personal Windows dev env (Desktop)
 # setwd("~/dev/r-project-2019/results/") # For personal Windows dev env (Laptop)
+# setwd("~/dev/r-project-2019/part-3/")
 
 # !!! Only use for macOS graphical image exporting !!!
-if (!require("processx")) install.packages("processx")
-orca(p, "tmrca-results.png")
+# if (!require("processx")) install.packages("processx")
+# orca(p, "tmrca-results.png")
 #-----------------------------------
 
-df <- read.csv("results.csv")
+df <- read.csv("../results/results.csv")
 
 x <- list(title = "Iteration #")
 y <- list(title = "TMRCA")
@@ -35,4 +36,12 @@ mean_10000 <- mean(df$vector_10000)
 
 mean_list <- list(mean_100, mean_1000, mean_4000, mean_5000, mean_10000)
 
-plot(x = c(1:5), y = mean_list)
+barplot(x = c(100, 1000, 4000, 5000, 10000), y = mean_list)
+p2 <- plot_ly(
+    x = c(100, 1000, 4000, 5000, 10000),
+    y = mean_list,
+    name = "Average TMRCA for each n size population",
+    type = "bar"
+)
+mean_list
+p2
