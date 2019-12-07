@@ -29,38 +29,13 @@
 ----------------------------------------------------------
 
 # Part 2: Scientific Essay
-- The scientific essay file is in this repository under the name hoang-anh-report.r
+- The scientific essay pdf is currently unavailable
 
 ----------------------------------------------------------
 
 # Part 3: Modelling MRCA as per Dr. J Chang's model
 
-- This is some lorem ipsum
+- In-progress
 
 ----------------------------------------------------------
-```
-REPOSITORY TREE:
-/docs
-    | Chang_-_Recent_common_ancestors_of_all_present-day_individuals.r
-    | DDD_Project_part1.pdf
-    | DDD_Project_part2.pdf
-    | DDD_Project_part3.pdf
-    | ROC_-_Modelling_the_recent_common_ancestry_of_all_living_humans.pdf
-    | tutorial.R
-/part-1
-    | exercise-1.r
-    | exercise-2.r
-    | exercise-3.r
-/part-3
-    | index.r
-.RData
-.Rhistory
-.gitignore
-LICENSE.txt
-README.md
-sandbox.r
-sandbox1.r
-sandbox2.r
-sandbox3.r
-```
-------------------------------------------------------------
+Acknowledgement: Thank you Prof. Luiz  K. Takei (QC., Canada) for valuable guidance throughout the course of the project.
