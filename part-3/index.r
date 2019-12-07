@@ -1,4 +1,4 @@
-# TMRCA Estimation Program using Probability
+# TMRCA Estimation Program using Probability 1/n
 
 # parents choosing function
 ChooseParents <- function(n, list_p){
@@ -49,8 +49,8 @@ index <- function(n) {
 
   # INITIALIZATION STEP AT THE BEGINNING
   # ------------------------------------
-  # input pop size
-  n <- 10000
+  # input pop size (hard-coded)
+  # n <- 10000
 
   # init descendants list and parents list
   list_d <- list()
@@ -84,48 +84,71 @@ index <- function(n) {
   return(tmrca)
 }
 
+# Warning: Running the codes below may take up to 16 hours of your free time.
+# Continue with extreme free time on hand.
+# It's advised to run all 5 instances of n simultaneously...
+
 repetition <- 25
 vector_100 <- vector()
 vector_1000 <- vector()
+vector_4000 <- vector()
 vector_5000 <- vector()
 vector_10000 <- vector()
-vector_4000 <- vector()
+
 
 # n = 100
 for (i in 1:repetition){
-  tmrca <- index(n)
+  tmrca <- index(100)
   print(i)
   vector_100[i] <- c(tmrca)
 }
 
 # n = 1000
 for (i in 1:repetition){
-  tmrca <- index(n)
+  tmrca <- index(1000)
   print(i)
   vector_1000[i] <- c(tmrca)
 }
 
+# n = 4000
+for (i in 1:repetition){
+  tmrca <- index(4000)
+  print(i)
+  vector_4000[i] <- c(tmrca)
+}
+
 # n = 5000
 for (i in 1:repetition){
-  tmrca <- index(n)
+  tmrca <- index(5000)
   print(i)
   vector_5000[i] <- c(tmrca)
 }
 
 # n = 10000
 for (i in 1:repetition){
-  tmrca <- index(n)
+  tmrca <- index(10000)
   print(i)
   vector_10000[i] <- c(tmrca)
 }
 
-# n = 4000
-for (i in 1:repetition){
-  tmrca <- index(n)
-  print(i)
-  vector_12000[i] <- c(tmrca)
+
+
+# (RUN THE MODEL FIRST BEFORE) Saving the simulation results into a .csv file
+
+for (i in 1:25) {
+  cat("WARNING: DO NOT RUN FAUX DATA GENERATION IF ALREADY RUN SIMULATION CODE!!!\n")
 }
 
+# Faux data to test out dataframe export
+vector_100 <- c(1:25)
+vector_1000 <- c(1:25)
+vector_4000 <- c(1:25)
+vector_5000 <- c(1:25)
+vector_10000 <- c(1:25)
 
+
+# Export
+df <- data.frame(vector_100, vector_1000, vector_4000, vector_5000, vector_10000)
+write.csv(df, "./results/results1.csv")
 
  # cat("Average Time to MRCA (TMRCA) is: ", tmrca/repetition, "\n")

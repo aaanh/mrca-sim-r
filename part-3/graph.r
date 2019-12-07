@@ -38,14 +38,11 @@ mean_5000 <- mean(df$vector_5000)
 mean_10000 <- mean(df$vector_10000)
 
 mean_list <- list(mean_100, mean_1000, mean_4000, mean_5000, mean_10000)
+df_mean <- (mean_list)
+df_mean
+p2 <- plot_ly(x = ~c(100, 1000, 4000, 5000, 10000), y = ~mean_list, type="bar") %>%
+    layout(title = "Average TMRCA for each n size population", xaxis = list(title="Generations"), yaxis = list(title="Population size"))
 
-barplot(x = c(100, 1000, 4000, 5000, 10000), y = mean_list)
-p2 <- plot_ly(
-    x = c(100, 1000, 4000, 5000, 10000),
-    y = mean_list,
-    name = "Average TMRCA for each n size population",
-    type = "bar"
-)
 mean_list
 p2
 p
