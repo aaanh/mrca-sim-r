@@ -1,15 +1,18 @@
+# GRAPHING SCRIPTS
+# Dependencies: results/results.csv on https://github.com/zasshuwu/r-project-2019
+
 require(plotly)
 # setwd("~/dev/r-project-2019/results/") # For personal macOS dev env (MacBook)
 # setwd("C:/Users/Nogamioka/Desktop/dev/r-project-2019/results/") # For personal Windows dev env (Desktop)
 # setwd("~/dev/r-project-2019/results/") # For personal Windows dev env (Laptop)
 # setwd("~/dev/r-project-2019/part-3/")
 
-# !!! Only use for macOS graphical image exporting !!!
+# macOS graphical image exporting !!! (because screencap is sooooo 1999)
 # if (!require("processx")) install.packages("processx")
 # orca(p, "tmrca-results.png")
 #-----------------------------------
 
-df <- read.csv("../results/results.csv")
+df <- read.csv("./results/results.csv")
 
 x <- list(title = "Iteration #")
 y <- list(title = "TMRCA")
@@ -45,3 +48,4 @@ p2 <- plot_ly(
 )
 mean_list
 p2
+p
