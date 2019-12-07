@@ -3,8 +3,7 @@
 ### Course title: 201-DDD-05 - Statistical Methods
 --------------------------------------------------------
 ## Initializing dependencies:
-1. pacman
-2. dplyr, ggplot2, ggthemes, plotly
+- ggplot2, plotly
 ### Setting up development/testing env:
 1. Install R from https://cran.r-project.org/mirrors.html - choose the automatic CDN server link.
 2. Clone the repository here: git clone https://github.com/zasshuwu/r-project-2019
