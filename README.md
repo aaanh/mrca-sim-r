@@ -1,7 +1,6 @@
 # Repository: mrca-sim-r
-### R project for Stats course at JAC, 2019. MRCA simulation.
+### R project for Stats course at JAC, 2020. MRCA simulation.
 ### Course title: 201-DDD-05 - Statistical Methods
-### REVISED FOR 2020
 ------
 
 ## Initializing dependencies:
